@@ -14,9 +14,9 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage("Second step") {
+        stage("Deploy") {
             steps {
-                sh 'ssh root@172.31.1.148 \'uptime\''
+                sh'scp /target/jenkins-ci-cd-test-0.0.1-SNAPSHOT.jar root@172.31.1.148:/app.jar'
             }
         }
     }
