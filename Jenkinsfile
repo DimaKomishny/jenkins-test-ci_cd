@@ -8,9 +8,9 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("First step") {
+        stage("Build") {
             steps {
-                sh 'ssh root@172.31.1.148'
+                sh 'maven package'
             }
         }
         stage("Second step") {
