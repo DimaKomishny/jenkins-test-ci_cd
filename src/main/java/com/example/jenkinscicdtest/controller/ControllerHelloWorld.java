@@ -8,6 +8,6 @@ public class ControllerHelloWorld {
 
     @GetMapping("/hello")
     public String getHello() {
-        return "hello world";
+        return "The pipeline has been setup";
     }
 }
