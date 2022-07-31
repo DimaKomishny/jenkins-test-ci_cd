@@ -11,6 +11,7 @@ pipeline {
     stages {
         stage("Test") {
             steps {
+            echo 'test'
 //             it takes a lot of time
 //                 sh 'mvn surefire:test'
             }
