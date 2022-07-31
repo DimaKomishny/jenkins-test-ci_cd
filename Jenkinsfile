@@ -9,23 +9,12 @@ pipeline {
         timeout(time: 3, unit: 'MINUTES')
     }
     stages {
-        stage('Setup parameters') {
-            script {
-                properties([
-                    parameters([
-                        choice(
-                            choices: ['maven', 'gradle'],
-                            name: 'buildTool'
-                        )
-                    ])
-                ])
+
+        stage("Test") {
+            steps {
+                sh 'mvn surefire:test'
             }
         }
-        stage("Test") {
-                    steps {
-                        sh 'mvn surefire:test'
-                    }
-                }
         stage("Build") {
             steps {
                 sh 'mvn clean package'
