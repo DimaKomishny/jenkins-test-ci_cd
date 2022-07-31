@@ -8,6 +8,6 @@ public class ControllerHelloWorld {
 
     @GetMapping("/hello")
         public String getHello() {
-            return "The pipeline has been setup";
+            return "Check SCM trigger";
         }
     }
