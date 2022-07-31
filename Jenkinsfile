@@ -12,13 +12,12 @@ pipeline {
         stage("Test") {
             steps {
             echo 'test'
-//             it takes a lot of time
-//                 sh 'mvn surefire:test'
+                sh 'mvn surefire:test'
             }
         }
         stage("Build") {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn package -Dmaven.test.skip'
             }
         }
         stage("Deploy") {
