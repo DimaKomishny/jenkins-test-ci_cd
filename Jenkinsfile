@@ -9,6 +9,11 @@ pipeline {
         timeout(time: 3, unit: 'MINUTES')
     }
     stages {
+        stage("Test") {
+                    steps {
+                        sh 'mvn surefire:test'
+                    }
+                }
         stage("Build") {
             steps {
                 sh 'mvn clean package'

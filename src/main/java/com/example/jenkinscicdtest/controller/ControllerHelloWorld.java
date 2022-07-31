@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControllerHelloWorld {
 
     @GetMapping("/hello")
-    public String getHello() {
-        return "The pipeline has been setup";
+        public String getHello() {
+            return "The pipeline has been setup";
+        }
     }
-}
